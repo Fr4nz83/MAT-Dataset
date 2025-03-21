@@ -1,0 +1,1 @@
+Placeholder for the folder that has to locally contain a dataset of trajectories moving over New York City.
