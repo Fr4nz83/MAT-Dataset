@@ -13,10 +13,10 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 # === Configuration ===
 
 # Set HuggingFace Transformers cache directory
-os.environ['TRANSFORMERS_CACHE'] = '/home/francomaria.nardini/raid/guidorocchietti/.cache/huggingface'
+#os.environ['TRANSFORMERS_CACHE'] = '/home/francomaria.nardini/raid/guidorocchietti/.cache/huggingface'
 
 # Specify which GPUs to use
-os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2,4,5'
+#os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2,4,5'
 
 #%%
 # === Helper Functions ===
