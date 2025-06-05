@@ -1,3 +1,4 @@
+#%%
 import os
 import pandas as pd
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
@@ -182,7 +183,9 @@ def evaluate_model_performance(results: Dict, model_key: str, analyzer: Sentimen
     
     return calculate_metrics(true_positive, true_negative, false_positive, false_negative)
 
-def main():
+#%%
+#def main():
+if True:
     print("Inizializzazione Sentiment Analysis Multi-Model...")
     
     # Inizializza l'analyzer
@@ -193,7 +196,7 @@ def main():
     
     # Risultati per tutti i modelli
     all_results = {}
-    
+    results = {}
     # Analizza con ogni modello
     for model_key in analyzer.pipelines.keys():
         print(f"\n{'='*50}")
@@ -201,14 +204,16 @@ def main():
         print(f"{'='*50}")
         
         model_results = {}
-        
+        results[model_key] = {}
         for dataset_name, df in datasets.items():
             print(f"\nAnalizzando dataset: {dataset_name}")
             
             # Estrai i testi positivi e negativi
+            # Droppa le stringhe vuote e NaN
             positive_texts = df['positive'].dropna().tolist()
             negative_texts = df['negative'].dropna().tolist()
-            
+            positive_texts = [text for text in positive_texts if isinstance(text, str) and text.strip()]
+            negative_texts = [text for text in negative_texts if isinstance(text, str) and text.strip()]            
             print(f"Testi positivi: {len(positive_texts)}")
             print(f"Testi negativi: {len(negative_texts)}")
             
@@ -216,6 +221,10 @@ def main():
             positive_results = analyzer.analyze_texts(positive_texts, model_key)
             negative_results = analyzer.analyze_texts(negative_texts, model_key)
             
+            results[model_key][dataset_name] = {
+                'positive': pd.DataFrame({'label' :[x['label'] for x in positive_results], 'text' : positive_texts}),
+                'negative': pd.DataFrame({'label' :[x['label'] for x in negative_results],'text' :negative_texts})
+            }
             if positive_results and negative_results:
                 # Conta i risultati
                 positive_counts = pd.Series([r['label'] for r in positive_results]).value_counts().to_dict()
@@ -275,5 +284,6 @@ def main():
         print(f"\n🏆 Migliore modello per F1-Score: {comparison_df.iloc[0]['Model']}")
         print(f"🏆 Migliore modello per Accuracy: {comparison_df.sort_values('Accuracy', ascending=False).iloc[0]['Model']}")
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
+# %%
