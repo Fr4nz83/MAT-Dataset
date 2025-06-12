@@ -4,8 +4,8 @@ This repository contains the code and documentation concerning the pipeline used
 
 The paper has been submitted to the **Resource Track** of the [ACM CIKM 2025](https://cikm2025.org/) international conference -- stay tuned for future updates!
 
-In the following, we provide a brief description of the various Jupyter notebooks that implement our pipeline. We suggest to execute the notebooks have to be executed in the order they appear.
-Once all the notebooks have been executed, our pipeline continues with the application of the [MAT-Builder system](https://github.com/chiarap2/MAT_Builder).
+In the following, we first provide a brief description of the various Jupyter notebooks that implement our pipeline (STEP 1). We suggest to execute the notebooks in the order they appear.
+Once all of them have been executed according to the instructions, our pipeline continues with the use of the [MAT-Builder system](https://github.com/chiarap2/MAT_Builder) (STEP 2).
 
 ## STEP 1: Execution of Jupyter Notebooks and Python scripts
 
