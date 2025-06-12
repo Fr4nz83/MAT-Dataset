@@ -34,7 +34,9 @@ leveraging OSMnx, this notebook defines a function to download Points of Interes
 **7 - Meteostat daily data downloader.ipynb**:
 this notebook automates the retrieval of historical daily weather records from Meteostat’s bulk CSV endpoints for a list of station IDs, filtering for data post-1990 and selecting key variables like average temperature and precipitation. It handles missing values through interpolation and forward-filling, then classifies each day’s weather based on precipitation thresholds. The cleaned, labeled weather dataset is finally exported to Parquet, ready for ingestion by MAT-Builder.
 
+**8 - Generate Posts.py**: standalone Python scripts that uses the Meta’s meta-llama/Llama-3.3-70B-Instruct model to generate synthetic realistic social media posts from stop segments augmented with POIs. More specifically: executing this script first requires to have (1) the preprocessed trajectories of either Paris or NYC from notebook 5, and (2) the POIs of Paris or New York City. Then, give these two as input to the MAT-Builder system, which has then to be used to (1) compress the raw trajectoires, (2) segment the trajectories into stop and move segments, and finally (3) augment the stop segments with the POIs located within 50 meters from their centroids. One of the outputs of step (3) is a file named ```enriched_occasional.parquet```, which can then be given as input to this script to generate synthjetic but realistic posts based on the name and categories of the closest POI associated with each stop.  
+
 **9 - Prepare social media dataset for MAT-Builder.ipynb**:
-in this final notebook, the social media metadata produced by the Python script 8 are processed to generate the final synthetic tweets. The final output consists of a Parquet file , ready for ingestion by MAT-Builder.
+In this final notebook, the social media metadata produced by the Python script 8 are processed to generate the final synthetic tweets. The final output consists of a Parquet file , ready for ingestion by MAT-Builder.
 
 ## TO BE COMPLETED WITH MAT-Builder! 
