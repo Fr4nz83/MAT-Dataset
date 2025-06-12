@@ -9,17 +9,17 @@ The paper has been submitted to the Resource Track of the [ACM CIKM 2025](https:
 
 In the following we provide a brief description of the various Jupyter notebooks that implements our pipeline. The notebooks have to be executed in the order they appear.
 
-**1 - OSM NYC GPX traces downloader.ipynb**
-Here, a multi-threaded downloader slices the New York City bounding box into manageable tiles and fetches GPX trackpoints via the OSM API, complete with retry logic to handle transient failures. Helper functions generate bounding boxes, check for existing files, and manage pagination, while concurrent.futures orchestrates parallel downloads. The resulting GPX files are neatly organized by tile for later processing.
+**1 - OSM NYC GPX traces downloader.ipynb**: 
+a multi-threaded downloader slices the given New York City's bounding box into manageable tiles and fetches GPX trackpoints via the OSM API, complete with retry logic to handle transient failures. The resulting GPX files are organized by tile for later processing.
 
-**2.1.1 - Multiple GPX to GeoPandas trajectory processing (NY case).ipynb**
-This notebook reads corrected GPX files from all NYC tiles, extracts both track metadata and track points, and converts them into GeoPandas dataframes. It applies data cleaning steps—fixing nonstandard tags, parsing timestamps, merging metadata, and removing duplicates—before parallelizing the workload with joblib. Finally, it concatenates the per-tile results into a unified Parquet dataset with consistent categorical user IDs.
+**2.1.1 - Multiple GPX to GeoPandas trajectory processing (NY case).ipynb**:
+This notebook reads GPX files from notebook 1, extracts both track metadata and track points, and converts them into GeoPandas dataframes. It applies data cleaning steps, fixing nonstandard tags, parsing timestamps, merging metadata, and removing duplicates. Finally, it concatenates the per-tile results into a unified Parquet dataset with consistent categorical user IDs.
 
-**2.1.2 - Concatenate dataframes multiple bounding boxes (NY case).ipynb**
-Once all per-tile Parquet files are generated, this notebook loads each into GeoPandas, concatenates them into a single “mega” dataframe, converts timestamps to the America/New_York timezone, and de-identifies users. It documents the high memory demands of merging large files, offers tips for efficient RAM use, and ultimately writes out a merged nyc_merged.parquet for seamless downstream analysis.
+**2.1.2 - Concatenate dataframes multiple bounding boxes (NY case).ipynb**:
+Once all per-tile Parquet files are generated, this notebook loads each into GeoPandas, concatenates them into a single “mega” dataframe, converts timestamps to the America/New_York timezone, and de-identifies users. Ultimately writes out a merged nyc_merged.parquet.
 
-**2.2 - Single GPX to GeoPandas trajectory processing (Paris case).ipynb**
-Focusing on a solitary GPX file—typically downloaded via JOSM—this notebook reads track metadata and points in streamed chunks to handle large file sizes without exhausting memory. It filters and renames columns, merges metadata links into user IDs, and cleans timestamp formats before converting UTC times to Europe/Paris. The final GeoPandas dataframe is exported to Parquet for further geographic and temporal analysis.
+**2.2 - Single GPX to GeoPandas trajectory processing (Paris case).ipynb**:
+This notebook preprocesses a single pre-existing GPX file containing Paris' trajectories, which is assumed to have been downloaded with the [JOSM tool](https://josm.openstreetmap.de/). This notebook reads track metadata and points in streamed chunks to handle large file sizes without exhausting memory. It filters and renames columns, merges metadata links into user IDs, and cleans timestamp formats before converting UTC times to Europe/Paris. The final GeoPandas dataframe is exported to Parquet.
 
 **4 - OSM raw trajectory preprocessing.ipynb**
 Starting from preprocessed Parquet files (either Paris or NYC), this notebook computes per-user summaries—total observations, time spans, and sampling rates—then filters out trajectories that fall below duration or frequency thresholds. It provides diagnostic plots to visualize the distribution of these metrics, ensuring only high-quality trajectories remain. The cleaned trajectories are saved to a new Parquet file for use in modeling workflows.
