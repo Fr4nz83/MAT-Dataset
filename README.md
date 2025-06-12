@@ -5,7 +5,7 @@ This repository contains the code and documentation concerning the pipeline used
 The paper has been submitted to the **Resource Track** of the [ACM CIKM 2025](https://cikm2025.org/) international conference.
 
 
-## Overview of the pipeline
+## Overview of the pipeline's Jupyter Notebooks and Python scripts
 
 In the following, we provide a brief description of the various Jupyter notebooks that implement our pipeline. We suggest to execute the notebooks have to be executed in the order they appear.
 Finally, note that once all the notebooks have been executed, our pipeline continues with the application of the [MAT-Builder system](https://github.com/chiarap2/MAT_Builder).
