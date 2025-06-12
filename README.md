@@ -1,6 +1,8 @@
 # Human Mobility Datasets Enriched With Contextual and Social Dimensions
 
-This repository contains the code and documentation concerning the pipeline used to generate the two semantically enriched trajectory datasets presented in the resource paper "Human Mobility Datasets Enriched With Contextual and Social Dimensions" by Chiara Pugliese ([CNR-IIT](https://www.iit.cnr.it/en/)), Francesco Lettich ([CNR-ISTI](https://www.isti.cnr.it/en/)), Guido Rocchietti (CNR-ISTI), Chiara Renso (CNR-ISTI), and Fabio Pinelli ([IMT Lucca](https://www.imtlucca.it/), CNR-ISTI). The paper has been submitted to the Resource Track of the [CIKM 2025](https://cikm2025.org/) international conference.
+This repository contains the code and documentation concerning the pipeline used to generate the two semantically enriched trajectory datasets presented in the resource paper *Human Mobility Datasets Enriched With Contextual and Social Dimensions* by Chiara Pugliese ([CNR-IIT](https://www.iit.cnr.it/en/)), Francesco Lettich ([CNR-ISTI](https://www.isti.cnr.it/en/)), Guido Rocchietti (CNR-ISTI), Chiara Renso (CNR-ISTI), and Fabio Pinelli ([IMT Lucca](https://www.imtlucca.it/), CNR-ISTI). 
+
+The paper has been submitted to the Resource Track of the [ACM CIKM 2025](https://cikm2025.org/) international conference.
 
 
 ## Overview of the pipeline
