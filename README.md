@@ -72,7 +72,10 @@ Ultimately, the enrichment step outputs a dataset of semantically enriched traje
 
 ## Examples of querying RDF-based knowledge graphs
 
+In the [SPARQL](https://github.com/Fr4nz83/MAT-Dataset/tree/main/SPARQL) folder we provide:
 
+- a few [examples](https://github.com/Fr4nz83/MAT-Dataset/tree/main/SPARQL/SPARQL_examples) of SPARQL queries that can be executed on our RDF-based knowledge graphs. The examples have been tested with a popular triplestore, i.e., [GraphDB](https://graphdb.ontotext.com/), but others are expected to work as well.
+- the [files](https://github.com/Fr4nz83/MAT-Dataset/tree/main/SPARQL/ontology) containing the customized STEPv2 ontology defining the internal structure of our knowledge graphs; these might be interesting for those that want to better understand how we structured information within the KGs The files can be opened in the open-source ontology editor [Protege'](https://protege.stanford.edu/). For more details, please also look at our [IEEE Access MAT-Builder paper](https://ieeexplore.ieee.org/document/10227262/) and [MAT-Builder's GitHub repository](https://github.com/chiarap2/MAT_Builder).
 
 ## Cite us
 
