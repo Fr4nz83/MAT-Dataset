@@ -1,11 +1,12 @@
 # Human Mobility Datasets Enriched With Contextual and Social Dimensions
 
-This repository contains the code and documentation concerning the pipeline used to generate the two semantically enriched trajectory datasets presented in the resource paper *Human Mobility Datasets Enriched With Contextual and Social Dimensions* by Chiara Pugliese ([CNR-IIT](https://www.iit.cnr.it/en/)), Francesco Lettich ([CNR-ISTI](https://www.isti.cnr.it/en/)), Guido Rocchietti (CNR-ISTI), Chiara Renso (CNR-ISTI), and Fabio Pinelli ([IMT Lucca](https://www.imtlucca.it/), CNR-ISTI). 
+This repository contains the code and documentation of the enrichment workflow used to generate the two semantically enriched trajectory datasets presented in the resource paper *Human Mobility Datasets Enriched With Contextual and Social Dimensions* by Chiara Pugliese ([CNR-IIT](https://www.iit.cnr.it/en/)), Francesco Lettich ([CNR-ISTI](https://www.isti.cnr.it/en/)), Guido Rocchietti (CNR-ISTI), Chiara Renso (CNR-ISTI), and Fabio Pinelli ([IMT Lucca](https://www.imtlucca.it/), CNR-ISTI). 
 
 The paper has been submitted to the **Resource Track** of the [ACM CIKM 2025](https://cikm2025.org/) international conference -- stay tuned for future updates!
 
-In the following, we first provide a brief description of the various Jupyter notebooks that implement our pipeline ([STEP 1](https://github.com/Fr4nz83/MAT-Dataset/blob/main/README.md#step-1-execution-of-jupyter-notebooks-and-python-scripts)). We suggest to execute the notebooks in the order they appear.
-Once all of them have been executed according to the instructions, our pipeline continues with the use of the [MAT-Builder system](https://github.com/chiarap2/MAT_Builder) (STEP 2).
+In the following, we first provide a brief description of the various Jupyter notebooks that implement our workflow ([STEP 1](https://github.com/Fr4nz83/MAT-Dataset/blob/main/README.md#step-1-execution-of-jupyter-notebooks-and-python-scripts)). We suggest to execute the notebooks in the order they appear.
+Once all of them have been executed according to the instructions, our workflow continues with the use of the [MAT-Builder system](https://github.com/chiarap2/MAT_Builder) (STEP 2), which is the tool that actually semantically enriches the trajectories and creates the two final Paris and New York City datasets, both in tabular and RFD-based knowledge graph representations. The final datasets can be found on our [Zenodo repository](https://doi.org/10.5281/zenodo.15624419).
+
 
 ## STEP 1: Execution of Jupyter Notebooks and Python scripts
 
