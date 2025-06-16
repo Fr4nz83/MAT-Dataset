@@ -48,9 +48,10 @@ Once all the notebooks belonging to STEP 1 are executed, we have all the ingredi
    1. filter out trajectories having less than 2 samples;
    2. filter noisy samples inducing velocities above 300km/h;
    3. compress the trajectories such that all points within a radius of 20 meters from a given initial point are compressed into a single point that has the median coordinates of all points and the time of the initial point.
-  At the end of this step, MAT-Builder generates a Parquet file named ```traj_cleaned.parquet```, representing the 
+  
+  At the end of this step, MAT-Builder generates a Parquet file named ```traj_cleaned.parquet```, representing the datasets of raw GPS trajectories that have been further preprocessed by MAT-Builder. For more information on the content of this file, please refer to our [Zenodo repository](https://doi.org/10.5281/zenodo.15624419).
 
-- **Segmentation step**: 
+- **Segmentation step**: this step takes as input a dataset of raw GPS trajectories -- in our case, we provide the ones obtained by the MAT-Builder's preprocessing step. The segmentation step partitions the trajectories in stop and move segments, where a stop segment represents a moving object staying at some place for some time, while a move segment represents a moving object transitioning from one stop to another. At the end of this step, MAT-Builder generates two Parquet files named ```stops.parquet``` and ```moves.parquet```, representing the stop and move segments that have been detected by the system. For more information on the content of this file, please refer to our [Zenodo repository](https://doi.org/10.5281/zenodo.15624419).
 
 
 ## Cite us
