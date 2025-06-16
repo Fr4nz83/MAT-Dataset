@@ -57,7 +57,7 @@ Once all the notebooks belonging to STEP 1 are executed, we have all the ingredi
 
   At the end of this step, MAT-Builder generates two Parquet files named ```stops.parquet``` and ```moves.parquet```, representing the stop and move segments that have been detected by the system. For more information on the content of these two files, please refer to our [Zenodo repository](https://doi.org/10.5281/zenodo.15624419).
 
-- **Enrichment step**: Finally, the enrichment module enriches the segmented trajectories with all the aspects supported by the module, i.e., regularity (i.e., distinction between occasional and systematic stops), move (with transportation means estimation), weather, and social media. To this end, the enrichment step takes as input various datasets:
+- **Enrichment step**: Finally, the enrichment module enriches the segmented trajectories with all the semantic dimensions supported by the module, i.e., regularity (i.e., distinction between occasional and systematic stops), move (with transportation means estimation), weather, and social media. To this end, the enrichment step takes as input various datasets:
   1. a Parquet file contaning a dataset of raw GPS trajectories, e.g., ```traj_cleaned.parquet```;
   2. a Parquet file contaning a dataset of stop segments detected from the trajectories, e.g., ```stops.parquet```;
   3. a Parquet file contaning a dataset of move segments detected from the trajectories, e.g., ```moves.parquet```;
