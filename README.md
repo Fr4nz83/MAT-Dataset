@@ -51,7 +51,13 @@ Once all the notebooks belonging to STEP 1 are executed, we have all the ingredi
   
   At the end of this step, MAT-Builder generates a Parquet file named ```traj_cleaned.parquet```, representing the datasets of raw GPS trajectories that have been further preprocessed by MAT-Builder. For more information on the content of this file, please refer to our [Zenodo repository](https://doi.org/10.5281/zenodo.15624419).
 
-- **Segmentation step**: this step takes as input a dataset of raw GPS trajectories -- in our case, we provide the ones obtained by the MAT-Builder's preprocessing step. The segmentation step partitions the trajectories in stop and move segments, where a stop segment represents a moving object staying at some place for some time, while a move segment represents a moving object transitioning from one stop to another. At the end of this step, MAT-Builder generates two Parquet files named ```stops.parquet``` and ```moves.parquet```, representing the stop and move segments that have been detected by the system. For more information on the content of this file, please refer to our [Zenodo repository](https://doi.org/10.5281/zenodo.15624419).
+- **Segmentation step**: this step takes as input a dataset of raw GPS trajectories -- in our case, we provide the ones obtained by the MAT-Builder's preprocessing step -- and partitions the trajectories in stop and move segments, where a stop segment represents a moving object staying at some place for some time, while a move segment represents a moving object transitioning from one stop to another. The parameters we used for segmentation are:
+  1. we set the minimum duration of a stop to 10 minutes;
+  2. the maximum spatial radius a stop can have is set to 200 meters. 
+
+  At the end of this step, MAT-Builder generates two Parquet files named ```stops.parquet``` and ```moves.parquet```, representing the stop and move segments that have been detected by the system. For more information on the content of these two files, please refer to our [Zenodo repository](https://doi.org/10.5281/zenodo.15624419).
+
+- **Enrichment step**: this step 
 
 
 ## Cite us
