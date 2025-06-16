@@ -67,7 +67,7 @@ Once all the notebooks belonging to STEP 1 are executed, we have all the ingredi
 
   The two parameters regulating the systematic and occasional stop detection are those of DBSCAN. The first parameter, which corresponds to the DBSCAN epsilon, determines the distance below which two stops are considered neighbours, and it is empirically set to 50 meters. The second one, which corresponds to the DBSCAN minPts parameters, determines the number of neighbouring stops a stop must have in order to be considered core, and it is empirically set to 5. Occasional and systematic stops are both augmented with POIs found to be less than 50 meters far from their centroids.
 
-Ultimately, the enrichment step produces 
+Ultimately, the enrichment step outputs a dataset of semantically enriched trajectories, in two different formats: **tabular**, and **RDF-based knowledge graph**. More information on these two representations are provided in our [Zenodo repository](https://doi.org/10.5281/zenodo.15624419), and for what specifically concerns the RDF-based knowledge graph representation also in the [IEEE Access MAT-Builder paper](https://ieeexplore.ieee.org/document/10227262).
 
 
 ## Cite us
