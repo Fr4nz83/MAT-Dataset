@@ -72,4 +72,4 @@ Ultimately, the enrichment step outputs a dataset of semantically enriched traje
 
 ## Cite us
 
-The paper behind this reposiitory has been submitted to the "Resource Track" of the CIKM 2025 conference. Stay tuned for future updates!
+The paper behind this repository has been submitted to the **Resource Track** of the [ACM CIKM 2025](https://cikm2025.org/) international conference -- stay tuned for future updates!
