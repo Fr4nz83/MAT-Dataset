@@ -70,6 +70,10 @@ Once all the notebooks belonging to STEP 1 are executed, we have all the ingredi
 Ultimately, the enrichment step outputs a dataset of semantically enriched trajectories, in two different formats: **tabular**, and **RDF-based knowledge graph**. More information on these two representations are provided in our [Zenodo repository](https://doi.org/10.5281/zenodo.15624419), and for what specifically concerns the RDF-based knowledge graph representation also in the [IEEE Access MAT-Builder paper](https://ieeexplore.ieee.org/document/10227262).
 
 
+## Examples of querying RDF-based knowledge graphs
+
+
+
 ## Cite us
 
 The paper behind this repository has been submitted to the **Resource Track** of the [ACM CIKM 2025](https://cikm2025.org/) international conference -- stay tuned for future updates!
