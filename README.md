@@ -57,7 +57,17 @@ Once all the notebooks belonging to STEP 1 are executed, we have all the ingredi
 
   At the end of this step, MAT-Builder generates two Parquet files named ```stops.parquet``` and ```moves.parquet```, representing the stop and move segments that have been detected by the system. For more information on the content of these two files, please refer to our [Zenodo repository](https://doi.org/10.5281/zenodo.15624419).
 
-- **Enrichment step**: this step 
+- **Enrichment step**: Finally, the enrichment module enriches the segmented trajectories with all the aspects supported by the module, i.e., regularity (i.e., distinction between occasional and systematic stops), move (with transportation means estimation), weather, and social media. To this end, the enrichment step takes as input various datasets:
+  1. a Parquet file contaning a dataset of raw GPS trajectories, e.g., ```traj_cleaned.parquet```;
+  2. a Parquet file contaning a dataset of stop segments detected from the trajectories, e.g., ```stops.parquet```;
+  3. a Parquet file contaning a dataset of move segments detected from the trajectories, e.g., ```moves.parquet```;
+  4. a Parquet file contaning a dataset of POIs, e.g., ```pois.parquet```;
+  5. a Parquet file contaning a dataset of weather conditions, e.g., ```weather_conditions.parquet```;
+  6. a Parquet file contaning a dataset of social media posts, e.g., ```social_paris.parquet```;
+
+  The two parameters regulating the systematic and occasional stop detection are those of DBSCAN. The first parameter, which corresponds to the DBSCAN epsilon, determines the distance below which two stops are considered neighbours, and it is empirically set to 50 meters. The second one, which corresponds to the DBSCAN minPts parameters, determines the number of neighbouring stops a stop must have in order to be considered core, and it is empirically set to 5. Occasional and systematic stops are both augmented with POIs found to be less than 50 meters far from their centroids.
+
+Ultimately, the enrichment step produces 
 
 
 ## Cite us
