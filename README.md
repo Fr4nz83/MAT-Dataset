@@ -79,4 +79,4 @@ In the [SPARQL](https://github.com/Fr4nz83/MAT-Dataset/tree/main/SPARQL) folder 
 
 ## Cite us
 
-The paper behind this repository has been submitted to the **Resource Track** of the [ACM CIKM 2025](https://cikm2025.org/) international conference -- stay tuned for future updates!
+The paper *Human Mobility Datasets Enriched With Contextual and Social Dimensions* has been submitted to the **Resource Track** of the [ACM CIKM 2025](https://cikm2025.org/) international conference; stay tuned for future updates!
